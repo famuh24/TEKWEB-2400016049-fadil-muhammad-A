@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #25629f;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+
+
+.foto-profil {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* Lingkaran */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem; /* Jarak ke teks di bawah */
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.namaku{
+color: white;
+}
+
+.jabatan {
+  font-size: 1.2rem;
+  color: #3498db;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.deskripsi {
+  line-height: 1.7;
+  color: #555;
+}
+/* .foto{
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 20px 0;
+} */
+
+nav {
+  background: #1a252f;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.about p {
+  margin-bottom: 1rem;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax( 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.kontak {
+  text-align: center;       /* Rata tengah semua teks */
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;           /* Center seluruh section secara horizontal */
+}
+
+.kontak h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.kontak p {
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem;
+  line-height: 1.6;
+}
+
+.kontak a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.kontak a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #ecf0f1;
+  color: #7f8c8d;
+}
