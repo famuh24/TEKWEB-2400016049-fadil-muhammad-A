@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Saya</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button class="mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+  <i class="fas fa-moon"></i>
+</button>
+
+<header class="hero">
+  <div class="container">
+    <img src="p1.jpg" alt="Foto profil saya" class="foto-profil" onerror="this.src='https://via.placeholder.com/180?text=Foto'">
+    <h1 class="namaku">Fadil Muhammad</h1>
+    <p class="jabatan">Web Developer</p>
+  </div>
+</header>
+
+<main class="container">
+  <section id="about" class="about section">
+    <h2>Tentang Saya</h2>
+    <p>Halo! Haya mahasiswa universtas Ahmad Dahlan fakultas sains dan teknologi terapan program studi system informasi, Hobi saya renang, saya tinggal di tamanan, saya anak ke tiga dari tiga bersaudara, ayah saya jawa dan ibu saya juga jawa jir, saya lahir di makassar dan besar di maluku utara lebih tepatnya di sofifi (ibu kota maluku utara).</p>
+    <p>Saya tidak tau kenapa saya masuk jurusan ini jadi demi mendalami teknologi kedepannya saya putuskan untuk masuk ke jurusan system informasi demi masa depan seiring berkembangnya teknologi an saya yakin saya bisa.</p>
+  </section>
+
+  <section id="portfolio" class="portfolio section">
+    <h2>Portofolio</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Pengalaman 1</h3>
+        <p>Mngkti organisasi sewaktu SMA</p>
+      </div>
+      <div class="project-card">
+        <h3>Pengalaman 2</h3>
+        <p>Pernah menjadi ketua panitia upgrading ormawa fast 2025.</p>
+      </div>
+      <div class="project-card">
+        <h3>Pengalaman 3</h3>
+        <p>pernah berkuliah sebelum kuliah di uad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontak section">
+    <h2>Kontak Saya</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-phone"></i> <strong>Telepon:</strong> 081243265263</p>
+      <p><i class="fab fa-instagram"></i> <strong>IG:</strong> <a href="https://instagram.com/Famuh24_" target="_blank">@Famuh24_</a></p>
+    </div>
+  </section>
+
+  <!-- To-Do List -->
+  <section class="todo-section section">
+    <h2>To-Do List</h2>
+    <div class="todo-input">
+      <input type="text" id="todoInput" placeholder="Tambahkan tugas...">
+      <button onclick="addTodo()"><i class="fas fa-plus"></i> Tambah</button>
+    </div>
+    <ul class="todo-list" id="todoList"></ul>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Fadil Muhammad. Allah sayang, Allah jaga.</p>
+  </div>
+</footer>
+
+<script>
+  // Dark Mode
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+  });
+
+  // To-Do List
+  function addTodo() {
+    const input = document.getElementById('todoInput');
+    const text = input.value.trim();
+    if (text === '') return;
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${text}</span>
+      <button onclick="this.parentElement.remove()" aria-label="Hapus tugas">
+        <i class="fas fa-trash"></i>
+      </button>
+    `;
+    document.getElementById('todoList').appendChild(li);
+    input.value = '';
+  }
+
+  document.getElementById('todoInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') addTodo();
+  });
+</script>
+
+</body>
+</html>
