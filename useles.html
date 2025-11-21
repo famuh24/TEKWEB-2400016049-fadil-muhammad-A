@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Useless Simple</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      background: #444;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background: #666; }
+    #box {
+      width: 250px;
+      height: 150px;
+      background: #222;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Random Useless App (Simple)</h2>
+
+  <div id="box">Klik Random</div>
+
+  <button id="btn">Random</button>
+
+  <script>
+    const box = document.getElementById("box");
+    const btn = document.getElementById("btn");
+
+    const uselessTexts = [
+      "Fakta: Semut tidak punya paru-paru.",
+      "Info: Kucing tidur 12–16 jam sehari.",
+      "Random: Angka 7 dianggap hoki.",
+      "Useless: Pisang termasuk berry.",
+      "Fun: Gurita punya 3 jantung.",
+      "Kosong... ini cuma teks acak.",
+    ];
+
+    btn.onclick = function () {
+      const randomText = uselessTexts[Math.floor(Math.random() * uselessTexts.length)];
+      const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+
+      box.textContent = randomText;
+      box.style.background = randomColor;
+    };
+  </script>
+
+</body>
+</html>
